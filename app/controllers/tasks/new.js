@@ -7,7 +7,22 @@ export default Ember.Controller.extend({
       var description = this.get('description');
       var date = this.get('date');
 
-      // Add the task to the database
+      // Add the task to the database (Firebase).
+      var newTask = this.store.createRecord('task', {
+        title: title,
+        description: description,
+        date: new Date(date)
+      });
+
+      // Save to the database (Firebase).
+      newTask.save();
+
+      // Clear the form
+      this.setProperties({
+        title: '',
+        description: '',
+        date: ''
+      })
     }
   }
 });
