@@ -3,7 +3,7 @@
 {{#each model as |task|}}
   <div class="card card-block">
     <h4 class="card-title">{{task.title}}</h4>
-    <small class="text-muted">Due: {{task.date}}</small>
+    <small class="text-muted">Due: {{formatDate task.date}}</small>
     <p class="card-text">{{task.description}}</p>
   </div>
 {{/each}}
