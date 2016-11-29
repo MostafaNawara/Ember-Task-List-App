@@ -2,7 +2,7 @@
 <h1>Tasks</h1>
 {{#each model as |task|}}
   <div class="card card-block">
-    <h4 class="card-title">{{task.title}}</h4>
+    <h4 class="card-title">{{#link-to 'tasks.edit' task.id}}{{task.title}}{{/link-to}}</h4>
     <small class="text-muted">Due: {{formatDate task.date}}</small>
     <p class="card-text">{{task.description}}</p>
   </div>
