@@ -5,5 +5,6 @@
     <h4 class="card-title">{{#link-to 'tasks.edit' task.id}}{{task.title}}{{/link-to}}</h4>
     <small class="text-muted">Due: {{formatDate task.date}}</small>
     <p class="card-text">{{task.description}}</p>
+    <button {{action 'deleteTask' task.id}} class="btn btn-danger" type="button">Delete</button>
   </div>
 {{/each}}
